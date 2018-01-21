@@ -16,7 +16,9 @@ I'a yr2 student in HKBU, majoring in Journalism- Data and Media Communication. T
 
 ### I was: 
 
-    borned in Rizhao, Shandong province in China, along with a twin sister. My family is consists of my parents, Maomao the dog, and my sister and I.
+    borned in Rizhao, Shandong province in China, along with a twin sister. My family is consists of my parents,
+    
+    Maomao the dog and my sister and I.
 
 ### I like :
     
@@ -24,9 +26,9 @@ I'a yr2 student in HKBU, majoring in Journalism- Data and Media Communication. T
     
     music- Joy division, Florence and the Machine, the Doors, Nirvana...
     
-    movies- momento
+    movies or TV series- momento, 
     
-    Actor- Jesse Eisenberg
+    Actor- Jesse Eisenberg,
     
 ## Links
 
