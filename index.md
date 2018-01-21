@@ -16,7 +16,7 @@ I'a yr2 student in HKBU, majoring in Journalism- Data and Media Communication
 
 ### Links
 
- * [my facebook](https://www.facebook.com/harper.ding.7)
+ * [my facebook link - but I barely use it](https://www.facebook.com/harper.ding.7)
  * []()
  * 
 
