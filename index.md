@@ -6,35 +6,22 @@ layout: default
 
 # Harper DING Chang
 
-harper who?
-
-I'a yr2 student in HKBU, majoring in Journalism- Data and Media Communication. This is my first website.
-
 - - -
 
-## about
+## about me
 
-### I was: 
+### Studying experience
 
-    borned in Rizhao, Shandong province in China, along with a twin sister. My family is consists of my parents,
-    
-    Maomao the dog and my sister and I.
+    Curently an year2 undergraduate of HKBU, major in Journalism- Data and Media Communication.
 
-### I like :
+### Position
     
-    books- Yang Dian, Harper Lee,
-    
-    music- Joy division, Florence and the Machine, the Doors, Nirvana...
-    
-    movies or TV series- momento, 
-    
-    Actor- Jesse Eisenberg,
+    Currently the President of HKBU Student's Union Mandarine Debate Team.
     
 ## Links
 
- * [my facebook link - but I barely use it](https://www.facebook.com/harper.ding.7)
- * []()
- * 
+ * [my facebook, which I barely use](https://www.facebook.com/harper.ding.7)
+ * [my wordpress where I publish my news writing assignments](https://wordpress.com/view/harperwho921660120.wordpress.com)
 
 - - -
 
