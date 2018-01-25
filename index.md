@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-!(selfie2.jpg)
+![](selfie2.jpg)
  
  # Harper DING Chang
 
@@ -19,9 +19,9 @@ layout: default
     
 #### Recent achievements of HKBU Mandarine Debate Team
 
-    !(港台.JPG)
+    ![](港台.JPG)
     Champion of 2017 RTHK University Mandarine Debate Conference
-    !(三地.JPG)
+    ![](三地.JPG)
     Champion of 2017 3 regions Debate Conference
 ## Links
 
