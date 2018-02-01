@@ -3,8 +3,9 @@ layout: default
 ---
 ![](selfie2.jpg)
  
- # Harper DING Chang
-
+ <p style= position: center>
+ Harper DING Chang 
+</p>
 - - -
 
 ## about me
