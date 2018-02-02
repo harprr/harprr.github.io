@@ -1,11 +1,21 @@
+element.style {
+}
+
+Body {
+    background-color: rgba(180,190,190,0.3);
+    font: Optima;
+    display: inline;
+    text-align: center;
+    list-style-position: inside;
+}
+
+
 ---
 layout: default
 ---
 ![](selfie2.jpg)
  
- <p style= position: center>
- Harper DING Chang 
-</p>
+# Harper DING Chang 
 - - -
 
 ## about me
