@@ -1,3 +1,4 @@
+<style>
 element.style {
 }
 
@@ -9,7 +10,7 @@ Body {
     list-style-position: inside;
 }
 
-
+</style>
 ---
 layout: default
 ---
