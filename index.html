@@ -3,7 +3,7 @@
 </p>
 
 <script>
-Achievements=[{
+Experience=[{
     'title':'Champion of 2017 RTHK University Debate Conference',
     'date':'2017.11',
     'location':'Hong Kong'
@@ -17,19 +17,16 @@ Achievements=[{
     'location':'Hong Kong'
     }]
     o = document.grtElementById('content')
-
     allItemString=''
-    for (i=0;i<Achievements.lenghth;i++) {
+    for (i=0;i<Experience.lenghth;i++) {
     console.log(i)
     itemString = '<li>'+ 
-        Achievements [i]['tilte']+','+
-    Achievements [i]['date']+','+
-    Achievements [i]['location']+'</i>'
+    Experience [i]['tilte']+','+
+    Experience [i]['date']+','+
+    Experience [i]['location']+'</i>'
     allItemString = allItemString+ itemString
     }
-
 o.innerHTML = '<ul>' + allItemString +'</ul>'
-
 </script>
 
 
