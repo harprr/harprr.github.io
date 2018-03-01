@@ -1,3 +1,44 @@
+<p id="content">
+   
+</p>
+
+<script>
+Achievements=[{
+    'title':'Champion of 2017 RTHK University Debate Conference',
+    'date':'2017.11',
+    'location':'Hong Kong'
+    },{
+        'title':'Champion of 2017 Guangdong, HK and Macaw Debate Conference',
+    'date':'2017.10',
+    'location':'Guangzhou'
+    },{
+        'title':'Second Runner up of 2017 Baihe Cup HK',
+    'date':'2017.9',
+    'location':'Hong Kong'
+    }]
+    o = document.grtElementById('content')
+
+    allItemString=''
+    for (i=0;i<Achievements.lenghth;i++) {
+    console.log(i)
+    itemString = '<li>'+ 
+        Achievements [i]['tilte']+','+
+    Achievements [i]['date']+','+
+    Achievements [i]['location']+'</i>'
+    allItemString = allItemString+ itemString
+    }
+
+o.innerHTML = '<ul>' + allItemString +'</ul>'
+
+</script>
+
+
+
+
+
+
+
+
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
