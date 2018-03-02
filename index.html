@@ -16,12 +16,12 @@ Experience=[{
     'date':'2017.9',
     'location':'Hong Kong'
     }]
-    o = document.grtElementById('content')
+    o = document.getElementById('content')
     allItemString=''
-    for (i=0;i<Experience.lenghth;i++) {
+    for (i=0;i<Experience.length;i++) {
     console.log(i)
     itemString = '<li>'+ 
-    Experience [i]['tilte']+','+
+    Experience [i]['titel']+','+
     Experience [i]['date']+','+
     Experience [i]['location']+'</i>'
     allItemString = allItemString+ itemString
