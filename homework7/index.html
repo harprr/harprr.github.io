@@ -1,1 +1,104 @@
 
+<script src="https://d3js.org/d3.v5.js"></script>
+<script src="https://d3js.org/d3-array.v1.min.js"></script>
+<script src="https://d3js.org/d3-collection.v1.min.js"></script>
+<script src="https://d3js.org/d3-color.v1.min.js"></script>
+<script src="https://d3js.org/d3-format.v1.min.js"></script>
+<script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+<script src="https://d3js.org/d3-time.v1.min.js"></script>
+<script src="https://d3js.org/d3-time-format.v2.min.js"></script>
+<script src="https://d3js.org/d3-scale.v2.min.js"></script>
+<h1>Budget Report on Innovation and Technology Development</h1>
+<p><p>
+    <body>
+        <section>
+            <p>Hong Kong budget report 2018 released on Feb 28 grants 500 billion HKD to Innovation and Technology Bureau(ITB)</p>  in order to promote the development
+           of local high-tech industrial clusters. <p> The fund will mainly be distributed to the construction of Lok Ma Chau Science Park and the innovation and technology fund.</p>
+</section>
+
+    </body>
+<section>
+<div id="chart"></div>
+
+<style>
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono);
+.slice text {
+   font-family: Droid Sans;
+}
+</style>
+<p>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+<script>
+var w = 400;
+var h = 400;
+var r = h/2;
+var aColor = [
+    'rgb(178, 55, 56)',
+    'rgb(213, 69, 70)',
+    'rgb(230, 125, 126)',
+    'rgb(239, 183, 182)',
+    'rgb(255, 220, 220)'
+]
+var data = [
+    {"label":"1", "value":5}, 
+    {"label": "2", "value":100},
+    {"label":"3", "value":100}, 
+    {"label":"4 ", "value":100},
+    {"label":"5", "value":200}
+];
+var vis = d3.select('#chart').append("svg:svg").data([data]).attr("width", w).attr("height", h).append("svg:g").attr("transform", "translate(" + r + "," + r + ")");
+var pie = d3.layout.pie().value(function(d){return d.value;});
+// Declare an arc generator function
+var arc = d3.svg.arc().outerRadius(r);
+// Select paths, use arc generator to draw
+var arcs = vis.selectAll("g.slice").data(pie).enter().append("svg:g").attr("class", "slice");
+arcs.append("svg:path")
+    .attr("fill", function(d, i){return aColor[i];})
+    .attr("d", function (d) {return arc(d);})
+;
+// Add the text
+
+arcs.append("svg:text")
+    .attr("transform", function(d){
+        d.innerRadius = 100; /* Distance of label to the center*/
+        d.outerRadius = r;
+        return "translate(" + arc.centroid(d) + ")";}
+    )
+    .attr("text-anchor", "middle")
+    .text( function(d, i) {return data[i].label})
+
+;
+
+</script>
+
+<p>1.Hong Kong Cyberport</p>
+<p>2.Hong Kong Science and Technology Park</p>
+<p>3.Technology platform- medical services and Artificial intelligence</p>
+<p>4.nnovation and Technology Fund</p>
+<p>5.Lok Ma Chau Science Park</p>
+<p>.........</p>
+</section>
+</p>
+
+
+<p>The Hong Kong government has shows its enthusiasm and determination to develop high- </p>
+<p>tech cluster, which can be seen from the grants it offered ITB in last few years since it was </p>
+<p>established in 2015.</p>
+
+
+<div>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            
+            <polyline points="100,170 200,140 300,110 400,90 500,0 " style="fill:none;stroke:black;stroke-width:3"></polyline>
+            <text x="100" y="160" fill="red">20</text>
+            <text x="200" y="130" fill="red">47</text>
+            <text x="300" y="100" fill="red">100</text>
+            <text x="390" y="80" fill="red">500</text>
+            <text x="100" y="190" fill="red">2015</text>
+            <text x="200" y="190" fill="red">2016</text>
+            <text x="300" y="190" fill="red">2017</text>
+            <text x="400" y="190" fill="red">2018</text>
+          </svg>
+          
+        </div>
