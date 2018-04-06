@@ -27,14 +27,14 @@
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
       var xScale = d3.scale.log().range([0, innerWidth]);
-      var yScale = d3.scale.log().range([innerHeight, 0]);
+      var yScale = d3.scale.log().range([0, innerWidth]);
       var rScale = d3.scale.sqrt();
 
       function render(data){
 
         xScale.domain( d3.extent(data, function (d){ return d[xColumn]; }));
         yScale.domain( d3.extent(data, function (d){ return d[yColumn]; }));
-        rScale.domain([0, d3.max(data, function (d){ return d[rColumn]; })]);
+        rScale.domain( d3.extent(data, function (d){ return d[rColumn]; }));
 
         // Compute the size of the biggest circle as a function of peoplePerPixel.
         /*var peopleMax = rScale.domain()[1];
