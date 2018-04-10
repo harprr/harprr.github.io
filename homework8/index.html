@@ -1,1 +1,203 @@
-hello
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <title>data breach</title>
+    
+
+    <script src="https://d3js.org/d3.v3.js"></script>
+    <h1><center>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data Breach Events from 2005
+    </center></h1>
+
+
+  
+  </head>
+
+  <style type="text/css">
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      font-size: 11px;
+    }
+
+    .axis path, .axis line {
+      fill: none;
+      stroke: black;
+      shape-rendering: crispEdges;  /* Round any decimal pixels so it'll render nicely */
+    }
+
+    /*
+    //Can use CSS3 Transitions, but not for everything (e.g. change radius size)
+    circle:hover{
+      fill: green;
+    }
+    */
+
+  </style>
+  <body>
+    <script>
+      
+
+      var outerWidth = 1700;
+      var outerHeight = 1750;
+      var rMin = 20; // "r" stands for radius
+      var rMax = 168;
+      var xColumn = "organization";
+      var yColumn = "year";
+      var rColumn = "radius";
+      var colorColumn = "group";
+      var name = "name",
+      story = "story",
+      margin = { top: 40, right: 20, bottom: 20, left: 40 },
+      padding = 1.5, // separation between same-color nodes
+      coPadding = 6;
+      
+
+      var svg = d3.select("body").append("svg")
+        .attr("width", outerWidth)
+        .attr("height", outerHeight)
+        .attr("transform","translate(100,100)")
+
+
+       
+       
+
+      var xScale = d3.scale.linear().range([0, outerWidth]);
+      var yScale = d3.scale.linear().range([outerHeight-5, 5]);
+      var rScale = d3.scale.linear().range([rMin, rMax]);
+      var colorScale = d3.scale.category20();
+
+
+      var xAxis = d3.svg.axis().scale(xScale).orient("top");
+      var yAxis = d3.svg.axis().scale(yScale).orient("left");
+
+     
+     svg.append("g").attr({
+        "class": "axis",  // Give class so we can style it
+        transform: "translate(" + [0, margin.top] + ")"  // Translate just moves it down into position (or will be on top)
+      }).call(xAxis);  // Call the xAxis function on the group
+
+      // Adds Y-Axis as a 'g' element
+      svg.append("g").attr({
+        "class": "axis",
+        transform: "translate(" + [margin.left, 0] + ")"
+      }).call(yAxis);  // Call the yAxis function on the group
+
+        
+
+      function render(circle){
+        xScale.domain(d3.extent(circle, function (d){ return d[xColumn]; }));
+        yScale.domain(d3.extent(circle, function (d){ return d[yColumn]; }));
+        rScale.domain(d3.extent(circle, function (d){ return d[rColumn]; }));
+
+        var force = d3.layout.force()
+        .charge(function(d, i) { return i ? 0 : -2000; })
+        .nodes(circle)
+        .size([outerWidth, outerHeight]);
+        force.start();
+
+        
+ 
+
+        var circle = svg.selectAll("circle").data(circle);
+        circle.enter().append("circle");
+        circle
+          .attr("r",       function (d){ return       rScale(d[rColumn])/1.5;     })
+          .attr("cx",      function (d){ return       xScale(d[xColumn])+rScale(d[rColumn])+100;     })
+          .attr("cy",      function (d){ return       yScale(d[yColumn])+rScale(d[rColumn])+100;     })
+          .attr("stroke","black" )
+          .attr("stroke_width","3px")
+          .attr("fill",    function (d){ return   colorScale(d[colorColumn]); });
+          
+          
+          circle.append("text")
+        .attr("dx", function(d){ return xScale(d[xColumn])+rScale(d[rColumn])+100; })
+        .attr("dy", function(d){ return yScale(d[yColumn])+rScale(d[rColumn])+100;  })
+        .attr("text-anchor", "middle")
+        .text(function(d){ return d["name"]; })
+        .style({
+            "fill":"black", 
+            "font-family":"Helvetica Neue, Helvetica, Arial, san-serif",
+            "font-size": "12px"
+        });
+
+        circle.exit().remove();
+
+        //simulation.nodes()
+      
+
+        svg
+    .selectAll('circle')
+    .on('mouseover', function() {
+        //NOTE: "this" is a DOM element
+        //      The function here is same as an event handler in plain JS
+        
+        d3.select(this)
+            .attr('r', function(d) {
+              
+                return 168;
+                
+            })
+            .style( "stroke","red")
+            .style("stroke-width","10px")
+        
+    })
+
+    .on('mouseout', function() {
+        d3.select(this)
+            .attr('r', function(d) {
+                return d['radius/1.5'];
+            })
+            .style( "stroke","black")
+            .style("stroke-width","1px");
+            
+            
+          
+    
+          })
+
+     function mouseover(){
+        tooltip.transition()
+          .duration(200)
+          .style("opacity", .9);
+      }
+      //Add the data you want to display to the tooltip. The province that is hovered and the number of arrests in that province.
+        //Position the left side of the tooltip at the same left offset as the mouse cursor,
+        //Position the tooltip 50px above the cursor
+      function mousemove(d){
+          tooltip .html(function(d){return[d.name]}  + "<br/>" )
+            .style("left", (d3.event.pageX) + "px")
+            .style("top", (d3.event.pageY - 50) + "px");
+      }
+      //Hide the tooltip whit CSS transition when you are no longer hover over it
+      function mouseout(){
+          tooltip.transition()
+            .duration(500)
+            .style("opacity", 0);
+      }
+      
+        }
+ 
+      
+      
+      function type(d){
+        d.radius = +d.radius;
+        d.year  = +d.year;
+        d.organization = +d.organization;
+        d.group  = +d.group;
+        d.name = d.name;
+        return d;
+      }
+
+      
+
+      d3.csv("data_breach.csv", type, render);
+      
+
+
+    </script>
+  </body>
+</html>
